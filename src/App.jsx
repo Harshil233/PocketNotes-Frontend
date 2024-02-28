@@ -80,6 +80,7 @@ function App() {
     setGroupSelected(true);
     setSelectedGroup(group);
     fetchMessages(group._id);
+    setIsActive(false)
   };
 
 
