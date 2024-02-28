@@ -40,7 +40,8 @@ function App() {
     colour6: '#6691ff',
   };
 
-
+  // const appUrl = process.env.APP_URL;
+  const appUrl = 'https://pocket-notes-eight-inky.vercel.app/';
   const handleCreateGroup = async () => {
 
     const nameParts = groupName.trim().split(' ');
@@ -57,7 +58,7 @@ function App() {
       color: selectedColor
     };
     try {
-      await fetch('http://localhost:3001/api/groups', {
+      await fetch(`${appUrl}api/groups`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +104,7 @@ const handleSvgClick = async () => {
     };
 
     try {
-      await fetch('http://localhost:3001/api/messages', {
+      await fetch(`${appUrl}api/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -123,7 +124,7 @@ const handleSvgClick = async () => {
 
 const fetchMessages = async (groupId) => {
   try {
-    const response = await fetch(`http://localhost:3001/api/messages/${groupId}`);
+    const response = await fetch(`${appUrl}api/messages/${groupId}`);
     const data = await response.json();
 
     console.log("groupId", groupId)
@@ -146,7 +147,7 @@ console.log("chat", chatMessages)
 
   const fetchGroups = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/groups');
+      const response = await fetch(`${appUrl}api/groups`);
       const data = await response.json();
   
       if (data.success) {
