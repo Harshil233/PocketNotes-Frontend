@@ -406,7 +406,7 @@ input[type="radio"]:checked + label {
   display: none;
 }
 
-@media (max-width:630px){
+@media screen and (max-width:630px){
   .side-menu{
     width: 100%;
   }
@@ -420,7 +420,7 @@ input[type="radio"]:checked + label {
   }
   .active{
     left: 100%;
-
+    width:0;
   }
   .add{
     right: 20px;
@@ -445,7 +445,7 @@ input[type="radio"]:checked + label {
     font-weight: 500;
   }
   .date::before{
-    right: 78px;
+    right: 73px;
     height: 5px;
     width: 5px;
   }
